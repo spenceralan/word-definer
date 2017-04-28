@@ -104,7 +104,13 @@ describe "Dictionary" do
   end
 
   describe ".delete_word" do
-
+    it "deletes a word from the dictionary given an id" do
+      id = word.id
+      orange = Word.new("orange")
+      Dictionary.save(orange)
+      Dictionary.delete_by_id(id)
+      expect(Dictionary.all_words).to eq [orange]
+    end
   end
 
 end
