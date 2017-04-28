@@ -1,0 +1,11 @@
+body {
+  text-align: center;
+  color: #947EB0;
+  background-color: #CCFBFE;
+}
+
+form {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}

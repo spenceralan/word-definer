@@ -1,0 +1,8 @@
+<h2>my dictionary</h2>
+<a href="/words/add" class="btn btn-success">add word</a>
+<hr>
+<%="<h4>your dictionary has #{@dictionary.length} #{@dictionary.length == 1 ? 'word' : 'words'}"%>
+<% @dictionary.each do |word| %>
+  <%="<h3><a href='/modify_word/#{word.id}'>#{word.describe}</a></h3>"%>
+  <%="<p>#{word.definition}</p>"%>
+<% end %>
