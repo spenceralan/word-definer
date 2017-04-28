@@ -24,22 +24,27 @@ describe "Word" do
   end
 
   describe "definition" do
-    word = Word.new("apple")
+    let (:word) { Word.new("apple") }
+
+    definition1 = Definition.new("fruit")
+    definition2 = Definition.new("edible")
+    definition3 = Definition.new("falls from trees")
+
 
     it "returns the definition" do
-      definition1 = Definition.new("fruit")
       word.add_definition(definition1)
       expect(word.definition).to eq "fruit"
     end
 
     it "returns multiple definitions" do
-      definition2 = Definition.new("edible")
+      word.add_definition(definition1)
       word.add_definition(definition2)
       expect(word.definition).to eq "fruit | edible"
     end
 
     it "returns long definitions" do
-      definition3 = Definition.new("falls from trees")
+      word.add_definition(definition1)
+      word.add_definition(definition2)
       word.add_definition(definition3)
       expect(word.definition).to eq "fruit | edible | falls from trees"
     end
