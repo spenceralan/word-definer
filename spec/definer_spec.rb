@@ -3,12 +3,24 @@ require "rspec"
 require "pry"
 
 describe "Word" do
+  let (:apple) { Word.new("apple") }
+  let (:orange) { Word.new("orange") }
 
   describe "#describe" do
     it "returns the word" do
-      word = Word.new("apple")
-      expect(word.describe).to eq "apple"
+      expect(apple.describe).to eq "apple"
     end
+
+    describe "#id" do
+      it "generates a uuid as an id" do
+        expect(apple.id).to be_a String
+      end
+    
+      it "uuids between different objects are unique" do
+        expect(apple.id).to_not eq orange.id
+      end
+    end
+    
   end
 
   describe "definition" do
@@ -51,22 +63,31 @@ describe "Dictionary" do
 
   let(:word) { Word.new("apple") }
 
+  before do
+    Dictionary.save(word)
+  end
+
   after do
     Dictionary.empty
   end
 
   describe ".save" do
     it "saves a word in the dictionary" do
-      Dictionary.save(word)
       expect(Dictionary.all_words).to eq [word]
     end
   end
 
   describe ".empty" do
     it "empties the dictionary of words" do
-      Dictionary.save(word)
       Dictionary.empty
       expect(Dictionary.all_words).to eq []
+    end
+  end
+
+  describe ".find_by_id" do
+    it "returns word object given the words id" do
+      id = word.id
+      expect(Dictionary.find_by_id(id)).to eq word
     end
   end
   
