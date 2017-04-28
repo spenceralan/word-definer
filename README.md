@@ -1,18 +1,18 @@
-# <!--PROJECT NAME HERE-->
+# The Word Definer - Epicodus - Ruby - Week 2
 
-<!--PROJECT DESCRIPTION HERE-->
+The core functionality of the web app is to allow for the creation of words and their corresponding definitions.
 
 ### Prerequisites
 
 Web browser with ES6 compatibility
 Examples: Chrome, Safari
 
-Ruby <!--VERSION HERE-->
+Ruby https://epic-word-definer.herokuapp.com/
 Bundler
 
 ### Installing
 
-Installation is quick and easy! First you can open this link <!--HEROKU LINK HERE--> to see the webpage in action live online. Or you can clone this repository to your machine, navigate to the file path in your terminal, and run 'app.rb' by typing '$ruby app.rb'. If you chose to clone the repository, after you run 'app.rb' you will need to copy the localhost path into your web browser. The standard localhost for Sinatra is port 4567
+Installation is quick and easy! First you can open this link https://epic-word-definer.herokuapp.com/ to see the webpage in action live online. Or you can clone this repository to your machine, navigate to the file path in your terminal, and run 'app.rb' by typing '$ruby app.rb'. If you chose to clone the repository, after you run 'app.rb' you will need to copy the localhost path into your web browser. The standard localhost for Sinatra is port 4567
 
 ## Built With
 
@@ -24,16 +24,10 @@ Installation is quick and easy! First you can open this link <!--HEROKU LINK HER
 * ES6
 * Jquery https://jquery.com/
 
-## Specifications
-
-| behavior |  input   |  output  |
-|----------|:--------:|:--------:|
-<!--SPECS GO HERE-->
- 
 ## Authors
 
-* <!--YOUR NAME HERE-->
+* Spencer Alan Ruiz
 
 ## License
 
-Copyright © 2017 <!--YOUR NAME HERE-->
+Copyright © 2017 Spencer Alan Ruiz
