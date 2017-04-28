@@ -46,7 +46,20 @@ module Dictionary
     @@dictionary
   end
   
-  def self.find
+  def self.find_by_word(word_to_find)
+    @@dictionary.find do |word|
+      word_to_find == word.describe
+    end
   end
+
+  def self.find_by_id(id)
+    @@dictionary.find do |word|
+      id == word.id
+    end
+  end
+
+  def self.delete_word
+  end
+  
   
 end

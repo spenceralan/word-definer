@@ -2,12 +2,9 @@ require "definer"
 require "rspec"
 require "pry"
 
-# describe "Dictionary" do
-# end
-
 describe "Word" do
 
-  describe "describe" do
+  describe "#describe" do
     it "returns the word" do
       word = Word.new("apple")
       expect(word.describe).to eq "apple"
@@ -42,10 +39,22 @@ describe "Definition" do
 
   let(:definition) { Definition.new("it does things") }
 
-  describe "describe" do
+  describe "#describe" do
     it "returns its definition" do
       expect(definition.describe).to eq "it does things"
     end
   end
   
+end
+
+describe "Dictionary" do
+
+  describe ".save" do
+    it "saves a word in the dictionary" do
+      word = Word.new("apple")
+      Dictionary.save(word)
+      expect(Dictionary.all_words).to eq [word]
+    end
+  end
+
 end
