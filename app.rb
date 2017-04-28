@@ -17,11 +17,18 @@ get("/words/add") do
 end
 
 post("/add_word") do
-  params.fetch("word")
-  word = Word.new(params.fetch("word"))
-  definition = Definition.new(params.fetch("definition"))
-  word.add_definition(definition)
-  Dictionary.save(word)
+  user_input_word = params.fetch("word")
+  user_input_definition = params.fetch("definition")
+
+  unless user_input_word.match?(/\A\s*\z/)
+    word = Word.new(user_input_word)
+    unless user_input_definition.match?(/\A\s*\z/)
+      definition = Definition.new(user_input_definition)
+      word.add_definition(definition)
+    end
+    Dictionary.save(word)
+  end
+
   @dictionary = Dictionary.all_words
   erb(:dictionary)
 end
@@ -34,8 +41,13 @@ end
 
 post("/update_word") do
   word = Dictionary.find_by_id(session[:id])
-  definition = Definition.new(params.fetch("definition"))
-  word.add_definition(definition)
+  user_input_definition = params.fetch("definition")
+
+  unless user_input_definition.match?(/\A\s*\z/)
+    definition = Definition.new(user_input_definition)
+    word.add_definition(definition)
+  end
+
   @dictionary = Dictionary.all_words
   erb(:dictionary)
 end
