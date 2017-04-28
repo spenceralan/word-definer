@@ -51,7 +51,7 @@ module Dictionary
   end
   
   def self.find_by_word(word_to_find)
-    @@dictionary.find do |word|
+    @@dictionary.select do |word|
       word_to_find == word.describe
     end
   end
@@ -62,8 +62,9 @@ module Dictionary
     end
   end
 
-  def self.delete_word
+  def self.delete_by_id(id)
+    word = self.find_by_id(id)
+    @@dictionary.delete(word)
   end
-  
-  
+
 end

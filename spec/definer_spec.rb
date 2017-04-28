@@ -91,5 +91,20 @@ describe "Dictionary" do
     end
   end
   
+  describe ".find_by_word" do
+    it "returns a single object that matches the input word" do
+      expect(Dictionary.find_by_word("apple")).to eq [word]
+    end
+
+    it "returns an array of objects that match the input word" do
+      apple = Word.new("apple")
+      Dictionary.save(apple)
+      expect(Dictionary.find_by_word("apple")).to eq [word, apple]
+    end
+  end
+
+  describe ".delete_word" do
+
+  end
 
 end
