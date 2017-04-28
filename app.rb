@@ -3,7 +3,7 @@ require 'sinatra/reloader'
 require './lib/definer'
 require 'pry'
 
-use Rack::Session::Cookie
+use Rack::Session::Cookie, :secret => '877de719-65d4-4f40-83bf-3b83d56d40db'
 
 also_reload('lib/**/*.rb')
 
