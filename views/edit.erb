@@ -2,12 +2,13 @@
 <%="<p>#{@word.definition}</p>"%>
 <form action="/update_word" method="post">
   <div>
-    <label for="definition">add definition</label>
+    <label for="definition">add another definition</label>
     <textarea name="definition" class="form-control" rows="3"></textarea>
     <hr>
-    <button type="submit" class="btn btn-success">add another definition</button>
-    <a href="/" class="btn btn-info">back</a>
-    <a href="/words/delete" class="btn btn-danger">delete word</a>
+    <button type="submit" class="btn btn-success">add definition</button>
   </div>
 </form>
+<hr>
+<a href="/" class="btn btn-info">back</a>
+<a href="/words/delete" class="btn btn-danger">delete word</a>
 
