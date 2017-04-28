@@ -23,7 +23,7 @@ describe "Word" do
     
   end
 
-  describe "definition" do
+  describe "#definition" do
     let (:word) { Word.new("apple") }
 
     definition1 = Definition.new("fruit")
