@@ -49,12 +49,26 @@ end
 
 describe "Dictionary" do
 
+  let(:word) { Word.new("apple") }
+
+  after do
+    Dictionary.empty
+  end
+
   describe ".save" do
     it "saves a word in the dictionary" do
-      word = Word.new("apple")
       Dictionary.save(word)
       expect(Dictionary.all_words).to eq [word]
     end
   end
+
+  describe ".empty" do
+    it "empties the dictionary of words" do
+      Dictionary.save(word)
+      Dictionary.empty
+      expect(Dictionary.all_words).to eq []
+    end
+  end
+  
 
 end

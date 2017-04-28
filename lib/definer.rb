@@ -45,6 +45,10 @@ module Dictionary
   def self.all_words
     @@dictionary
   end
+
+  def self.empty
+    @@dictionary = Array.new
+  end
   
   def self.find_by_word(word_to_find)
     @@dictionary.find do |word|
